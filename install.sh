@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# install some dependenciesA
-sudo apt install \
-    figlet \
-    hddtemp
+if [ "$EUID" -ne 0 ]
+  then echo "Please run as root"
+  exit
+fi
 
 # Install mtod from git
 if [ ! -d motd ]; then
@@ -15,12 +15,8 @@ else
 fi
 
 files=(\
-    10-hostname \
     20-sysinfo \
-    20-uptime \
     35-diskspace \
-    36-diskstatus \
-    40-services \
     60-docker \
 )
 
