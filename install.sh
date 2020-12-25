@@ -26,5 +26,5 @@ files=(\
 )
 
 for f in "${files[@]}"; do
-    cp ${f} /etc/update-motd.d/
+    cp motd/${f} /etc/update-motd.d/
 done;
