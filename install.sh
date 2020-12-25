@@ -2,7 +2,6 @@
 
 # install some dependenciesA
 sudo apt install \
-    update-motd \
     figlet \
     hddtemp
 
@@ -26,5 +25,5 @@ files=(\
 )
 
 for f in "${files[@]}"; do
-    cp motd/${f} /etc/update-motd.d/
+    sudo cp motd/${f} /etc/update-motd.d/
 done;
